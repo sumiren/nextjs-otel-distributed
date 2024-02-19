@@ -6,7 +6,8 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "prisma db push"
   },
   "dependencies": {
     "@opentelemetry/api-logs": "^0.48.0",
