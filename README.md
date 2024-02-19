@@ -12,7 +12,7 @@
   * /でレンダリングされるページがサーバーサイドフェッチでbackendを叩く
 * ./backend
   * Next.js（めんどくさかったので）
-  * /animalsでデータベース上のanimalsを返す
+  * /animalsでデータベース上のanimalsをContent-Type: application/jsonで返す
 * ./db
   * docker-composeでpostgresが立ち上がる。backendから叩かれる
 * ./otel-collector
