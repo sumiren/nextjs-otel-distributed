@@ -23,12 +23,13 @@
 
 ## Getting Started
 
+`pnpm install`とかは適宜
+
 1. otel-collector/config.ymlをいじって好きなバックエンドに送る設定をする
    * otel-collector/.envファイルを作るとよい
-2. `docker-compose up -d`でOpenTelemetry CollectorとPostgresを立ち上げる
-1. backendで`pnpm migrate`
-   * `pnpm install`とかは適宜
-4. 適当な方法でDBにつないでanimalsテーブルに適当なレコードをつくる（申し訳ないが）
+1`docker-compose up -d`でOpenTelemetry CollectorとPostgresを立ち上げる
+1. backendで`pnpm migrate`してPostgresにスキーマ適用する（申し訳ないが）
+1. 適当な方法でPostgresにつないでanimalsテーブルに適当なレコードをつくる（申し訳ないが）
    * 接続文字列はbackend/.env参照
 1. backend、frontendで`pnpm dev`
 1. localhost:3000にアクセスすると画面にanimalsテーブルの内容が出る。オブザーバビリティバックエンドにトレースとログが送られていることを確認
