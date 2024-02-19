@@ -1,0 +1,25 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  cumulativetodelta:
+
+exporters:
+  otlphttp:
+    endpoint: $OTLPHTTP_ENDPOINT1
+    headers:
+      Authorization: $OTLPHTTP_AUTH_HEADER1
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlphttp]
+    logs:
+      receivers: [otlp]
+      processors: []
+      exporters: [otlphttp]

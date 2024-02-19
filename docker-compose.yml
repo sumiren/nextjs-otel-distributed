@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres:
+    build:
+      context: ./db
+    environment:
+      POSTGRES_DB: main
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "2345:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  otel-collector:
+    build:
+      context: ./otel-collector
+    env_file:
+      - ./otel-collector/.env
+    ports:
+      - '4317:4317'
+      - '4318:4318'
+volumes:
+  postgres_data:
