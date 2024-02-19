@@ -16,10 +16,10 @@
 * ./db
   * docker-composeでpostgresが立ち上がる。backendから叩かれる
 * ./otel-collector
-  * frontend/backendのサーバー2つからOTLPで受けるOpenTelemetry Collector
+  * docker-composeでOpenTelemetry Collectorが立ち上がる。 frontend/backendのサーバー2つからOTLPを受ける
   * config.ymlなどを自由にさわって、試したいバックエンドを試す
     * exporterをいっぱい定義すれば色々なところに同時並行でおくれる
-  * オブザーバビリティバックエンド次第ではDockerfileを変えないとダメ（イメージ指定があるとか）
+    * オブザーバビリティバックエンド次第ではDockerfileを変えないとダメ（イメージ指定があるとか）
 
 ## Getting Started
 
