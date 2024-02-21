@@ -8,15 +8,15 @@
 ## What
 
 * ./frontend
-  * Next.js
+  * Next.js ポート3000
   * /でレンダリングされるページがサーバーサイドフェッチでbackendを叩く
 * ./backend
-  * Next.js（めんどくさかったので）
+  * Next.js（めんどくさかったので） ポート3001
   * /animalsでデータベース上のanimalsをContent-Type: application/jsonで返す
 * ./db
-  * docker-composeでpostgresが立ち上がる。backendから叩かれる
+  * docker-composeでpostgresが立ち上がる。backendから叩かれる。ポート2345
 * ./otel-collector
-  * docker-composeでOpenTelemetry Collectorが立ち上がる。 frontend/backendのサーバー2つからOTLPを受ける
+  * docker-composeでOpenTelemetry Collectorが立ち上がる。 frontend/backendのサーバー2つからOTLPを受ける。ポート4318
   * config.ymlなどを自由にさわって、試したいバックエンドを試す
     * exporterをいっぱい定義すれば色々なところに同時並行でおくれる
     * オブザーバビリティバックエンド次第ではDockerfileを変えないとダメ（イメージ指定があるとか）
